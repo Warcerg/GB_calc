@@ -2,4 +2,6 @@
 <resources>
     <dimen name="button_margin">1dp</dimen>
     <dimen name="button_text">16sp</dimen>
+    <dimen name="button2text_margin">20dp</dimen>
+    <dimen name="text_top_margin">10dp</dimen>
 </resources>

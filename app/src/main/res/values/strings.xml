@@ -19,4 +19,6 @@
     <string name="divide">/</string>
     <string name="equals">=</string>
     <string name="button_font">sans-serif-black</string>
+    <string name="result">"Result"</string>
+    <string name="input">"User input"</string>
 </resources>
