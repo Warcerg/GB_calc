@@ -10,6 +10,7 @@ public enum Operation {
 
     private final String value;
 
+
     Operation(String value){
         this.value=value;
     }
