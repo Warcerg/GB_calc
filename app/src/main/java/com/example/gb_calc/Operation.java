@@ -6,8 +6,7 @@ public enum Operation {
     MINUS("-"),
     DIVIDE("/"),
     MULTIPLY("X"),
-    POINT("."),
-    CALCULATE("=");
+    POINT(".");
 
     private final String value;
 
