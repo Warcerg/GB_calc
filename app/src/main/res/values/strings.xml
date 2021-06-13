@@ -10,7 +10,7 @@
     <string name="_2">2</string>
     <string name="_3">3</string>
     <string name="_0">0</string>
-    <string name="point">,</string>
+    <string name="point">.</string>
     <string name="todo">TODO</string>
     <string name="c">C</string>
     <string name="plus">+</string>
@@ -19,6 +19,8 @@
     <string name="divide">/</string>
     <string name="equals">=</string>
     <string name="button_font">sans-serif-black</string>
-    <string name="result">"Result"</string>
-    <string name="input">"User input"</string>
+    <string name="result">""</string>
+    <string name="input">""</string>
+    <string name="empty">""</string>
+    <string name="ErrorZeroDiv">"ERROR. cannot divide on zero!"</string>
 </resources>
