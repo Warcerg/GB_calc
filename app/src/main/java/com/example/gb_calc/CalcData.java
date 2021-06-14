@@ -1,12 +1,18 @@
 package com.example.gb_calc;
 
-public class CalcData {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+
+public class CalcData implements Parcelable {
     private String input = "";
     private String result = "";
 
     private final String ZERO_ERROR = "ERROR. cannot divide on zero!";
+    private final String POINT = ".";
 
     private Operation operation = Operation.EMPTY;
+    private String operationParcelable;
     private boolean pointCheck;
 
     private float valueOne;
@@ -17,6 +23,29 @@ public class CalcData {
     public CalcData() {
         pointCheck = false;
     }
+
+    protected CalcData(Parcel in) {
+        operationParcelable = operation.toString();
+        operationParcelable = in.readString();
+        input = in.readString();
+        result = in.readString();
+        pointCheck = in.readByte() != 0;
+        valueOne = in.readFloat();
+        valueTwo = in.readFloat();
+        operPos = in.readInt();
+    }
+
+    public static final Creator<CalcData> CREATOR = new Creator<CalcData>() {
+        @Override
+        public CalcData createFromParcel(Parcel in) {
+            return new CalcData(in);
+        }
+
+        @Override
+        public CalcData[] newArray(int size) {
+            return new CalcData[size];
+        }
+    };
 
     public boolean isPointCheck() {
         return pointCheck;
@@ -91,7 +120,7 @@ public class CalcData {
                 input.endsWith(Operation.MINUS.toString()) ||
                 input.endsWith(Operation.MULTIPLY.toString()) ||
                 input.endsWith(Operation.DIVIDE.toString()) ||
-                input.endsWith(Operation.POINT.toString())) {
+                input.endsWith(POINT)) {
             appendInput("0");
         }
     }
@@ -117,7 +146,7 @@ public class CalcData {
     }
 
     public void lastPointCheck() {
-        if (input.endsWith(Operation.POINT.toString())) {
+        if (input.endsWith(POINT)) {
             appendInput("0");
         }
     }
@@ -126,7 +155,7 @@ public class CalcData {
         emptyCheck();
         lastPointCheck();
         if(!isPointCheck()){
-            appendInput(Operation.POINT.toString());
+            appendInput(POINT);
             setPointCheck(true);
         }
     }
@@ -184,5 +213,24 @@ public class CalcData {
         }
         setPointCheck(false);
         operation = Operation.EMPTY;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(input);
+        dest.writeString(result);
+        dest.writeString(ZERO_ERROR);
+        dest.writeString(POINT);
+        dest.writeString(operationParcelable);
+        operation = operation.operationSet(operationParcelable);
+        dest.writeByte((byte) (pointCheck ? 1 : 0));
+        dest.writeFloat(valueOne);
+        dest.writeFloat(valueTwo);
+        dest.writeInt(operPos);
     }
 }

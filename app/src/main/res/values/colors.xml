@@ -10,4 +10,9 @@
     <color name="orange">#FF876601</color>
     <color name="red">#FF872301</color>
     <color name="purple">#FF440187</color>
+    <color name="text_background">#FFFFFF</color>
+    <color name="night_mode_purple">#FF726A95</color>
+    <color name="night_mode_blue">#FF719FB0</color>
+    <color name="night_mode_green">#FFA0C1B8</color>
+    <color name="night_mode_dark_red">#8F3C4C</color>
 </resources>

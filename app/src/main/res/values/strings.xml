@@ -18,9 +18,9 @@
     <string name="multiply">X</string>
     <string name="divide">/</string>
     <string name="equals">=</string>
-    <string name="button_font">sans-serif-black</string>
     <string name="result">""</string>
     <string name="input">""</string>
     <string name="empty">""</string>
     <string name="ErrorZeroDiv">"ERROR. cannot divide on zero!"</string>
+    <string name="button_font">sans-serif-black</string>
 </resources>
