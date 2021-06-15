@@ -2,8 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
+
 
     <TextView
         android:id="@+id/textResult"
@@ -39,16 +39,16 @@
         android:id="@+id/button7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/top_button_to_text"
         android:text="@string/_7"
+        android:theme="@style/Button_Default_style"
         app:cornerRadius="@dimen/button_corner_radius"
-        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintBottom_toTopOf="@id/button4"
         app:layout_constraintEnd_toStartOf="@id/button8"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/button4"
         app:layout_constraintTop_toBottomOf="@id/textResult"
-        app:layout_constraintVertical_bias="0.3"
-        android:layout_marginTop="@dimen/top_button_to_text"
-        android:theme="@style/Button_Default_style"/>
+        app:layout_constraintVertical_bias="0.3" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button8"
@@ -168,7 +168,6 @@
         app:layout_constraintEnd_toStartOf="@id/button_point"
         app:layout_constraintStart_toStartOf="@id/button1"
         app:layout_constraintTop_toBottomOf="@id/button2"
-        app:layout_constraintBottom_toTopOf="@id/button_equals"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:cornerRadius="@dimen/button_corner_radius"
         android:theme="@style/Button_Default_style"
@@ -180,8 +179,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="@string/point"
-        app:layout_constraintBottom_toTopOf="@id/button_equals"
-        app:layout_constraintEnd_toStartOf="@id/button_multiply"
+        app:layout_constraintEnd_toStartOf="@id/button_equals"
         app:layout_constraintStart_toStartOf="@id/button3"
         app:layout_constraintTop_toBottomOf="@id/button3"
         app:cornerRadius="@dimen/button_corner_radius"
@@ -190,15 +188,15 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_clear"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/c"
-        android:backgroundTint="@color/red"
+        android:backgroundTint="@color/night_mode_dark_red"
         app:layout_constraintVertical_bias="0.3"
         app:layout_constraintTop_toBottomOf="@id/textResult"
         app:layout_constraintStart_toEndOf="@id/button9"
-        app:layout_constraintBottom_toTopOf="@id/button_plus"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/button_multiply"
+        app:layout_constraintEnd_toEndOf="@id/button_multiply"
         android:layout_marginTop="@dimen/top_button_to_text"
         app:cornerRadius="@dimen/button_corner_radius"
         android:theme="@style/Button_Default_style"
@@ -208,27 +206,28 @@
         android:id="@+id/button_plus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/night_mode_green"
         android:text="@string/plus"
-        android:backgroundTint="@color/teal_700"
-        app:layout_constraintTop_toBottomOf="@id/button_clear"
-        app:layout_constraintStart_toEndOf="@id/button6"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintBottom_toTopOf="@id/button_minus"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:cornerRadius="@dimen/button_corner_radius"
+        android:textColor="@color/night_mode_purple"
         android:theme="@style/Button_Default_style"
-        />
+        app:cornerRadius="@dimen/button_corner_radius"
+        app:layout_constraintBottom_toTopOf="@id/button_minus"
+        app:layout_constraintEnd_toStartOf="@id/button_multiply"
+        app:layout_constraintStart_toEndOf="@id/button6"
+        app:layout_constraintTop_toBottomOf="@id/button_clear"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_minus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/minus"
-        android:backgroundTint="@color/teal_700"
+        android:backgroundTint="@color/night_mode_green"
+        android:textColor="@color/night_mode_purple"
         app:layout_constraintTop_toBottomOf="@id/button_plus"
         app:layout_constraintStart_toEndOf="@id/button3"
-        app:layout_constraintBottom_toTopOf="@id/button_multiply"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/button_equals"
+        app:layout_constraintEnd_toStartOf="@id/button_divide"
         app:cornerRadius="@dimen/button_corner_radius"
         android:theme="@style/Button_Default_style"
         />
@@ -237,11 +236,13 @@
         android:id="@+id/button_multiply"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/teal_700"
+        android:backgroundTint="@color/night_mode_green"
+        android:textColor="@color/night_mode_purple"
         android:text="@string/multiply"
         app:layout_constraintBottom_toTopOf="@id/button_divide"
-        app:layout_constraintStart_toEndOf="@id/button_point"
-        app:layout_constraintTop_toBottomOf="@id/button_minus"
+        app:layout_constraintStart_toEndOf="@id/button_plus"
+        app:layout_constraintTop_toBottomOf="@id/button_clear"
+        app:layout_constraintEnd_toEndOf="parent"
         app:cornerRadius="@dimen/button_corner_radius"
         android:theme="@style/Button_Default_style"
         />
@@ -250,10 +251,13 @@
         android:id="@+id/button_divide"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/teal_700"
+        android:backgroundTint="@color/night_mode_green"
+        android:textColor="@color/night_mode_purple"
         android:text="@string/divide"
-        app:layout_constraintStart_toEndOf="@id/button_point"
+        app:layout_constraintStart_toEndOf="@id/button_minus"
         app:layout_constraintTop_toBottomOf="@id/button_multiply"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/button_equals"
         app:cornerRadius="@dimen/button_corner_radius"
         android:theme="@style/Button_Default_style"
         />
@@ -263,15 +267,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/equals"
-        android:backgroundTint="@color/orange"
-        app:layout_constraintTop_toBottomOf="@id/button_point"
-        app:layout_constraintStart_toStartOf="@id/button0"
-        app:layout_constraintEnd_toStartOf="@id/button_divide"
+        android:backgroundTint="@color/night_mode_blue"
+        app:layout_constraintTop_toBottomOf="@id/button_divide"
+        app:layout_constraintStart_toEndOf="@id/button_point"
+        app:layout_constraintEnd_toEndOf="@id/button_divide"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:cornerRadius="@dimen/button_corner_radius"
         android:theme="@style/Button_Default_style"
         />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
