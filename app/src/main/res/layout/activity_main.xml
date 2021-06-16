@@ -8,6 +8,19 @@
     tools:context=".MainActivity"
     >
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/theme_button_left_margin"
+        android:layout_marginTop="@dimen/top_button_to_text"
+        android:theme="@style/Button_Default_style"
+        app:cornerRadius="@dimen/button_corner_radius"
+        app:icon="@android:drawable/ic_menu_preferences"
+        app:iconGravity="textStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <include
         android:id="@+id/include"
         layout="@layout/calc"

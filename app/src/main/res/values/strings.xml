@@ -23,4 +23,5 @@
     <string name="empty">""</string>
     <string name="ErrorZeroDiv">"ERROR. cannot divide on zero!"</string>
     <string name="button_font">sans-serif-black</string>
+    <string name="Back">Back</string>
 </resources>
