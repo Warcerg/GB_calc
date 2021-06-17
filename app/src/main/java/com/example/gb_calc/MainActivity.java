@@ -2,8 +2,8 @@ package com.example.gb_calc;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private Button button_7;
     private Button button_8;
     private Button button_9;
-    CalcData calcData = new CalcData();
+    private CalcData calcData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         textInput = findViewById(R.id.textView);
         textResult = findViewById(R.id.textResult);
+        calcData = new CalcData();
         temp = getString(R.string.empty);
         initButtons();
 
@@ -58,6 +59,15 @@ public class MainActivity extends AppCompatActivity {
         initButtonMultiplyClickListener();
         initButtonDivideClickListener();
         initButtonEqualsClickListener();
+        initButtonSettingsClickListener();
+    }
+
+    private void initButtonSettingsClickListener() {
+        Button button_settings = findViewById(R.id.buttonSettings);
+        button_settings.setOnClickListener(v -> {
+           Intent runSettings = new Intent(MainActivity.this, SettingsActivity.class);
+           startActivity(runSettings);
+        });
     }
 
     private void setButtonsClickToListener(Button button, int p, int p2) {

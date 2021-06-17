@@ -4,34 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/board"
-    android:backgroundTintMode="multiply"
-    tools:context=".MainActivity"
-    >
+    tools:context=".SettingsActivity">
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonSettings"
+        android:id="@+id/buttonBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/theme_button_left_margin"
-        android:layout_marginTop="@dimen/top_button_to_text"
         android:theme="@style/Button_Default_style"
         app:cornerRadius="@dimen/button_corner_radius"
-        app:icon="@android:drawable/ic_menu_preferences"
-        app:iconGravity="textStart"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/Back"
+        app:layout_constraintStart_toEndOf="@id/buttonLightDarkMode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <include
-        android:id="@+id/include"
-        layout="@layout/calc"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonLightDarkMode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:theme="@style/Button_Default_style"
+        app:cornerRadius="@dimen/button_corner_radius"
+        app:icon="@android:drawable/ic_menu_view"
+        app:iconGravity="textStart"
+        app:layout_constraintEnd_toStartOf="@id/buttonBack"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1" />
-
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

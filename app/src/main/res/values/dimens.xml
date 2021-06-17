@@ -5,7 +5,8 @@
     <dimen name="button2text_margin">20dp</dimen>
     <dimen name="text_top_margin">10dp</dimen>
     <dimen name="textSize">24sp</dimen>
-    <dimen name="button_corner_radius">15sp</dimen>
+    <dimen name="button_corner_radius">15dp</dimen>
     <dimen name="text_layout_width">0dp</dimen>
-    <dimen name="top_button_to_text">15sp</dimen>
+    <dimen name="top_button_to_text">15dp</dimen>
+    <dimen name="theme_button_left_margin">15dp</dimen>
 </resources>

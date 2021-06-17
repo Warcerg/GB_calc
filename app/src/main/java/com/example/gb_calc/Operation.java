@@ -15,6 +15,9 @@ public enum Operation {
     }
 
     public Operation operationSet(String value){
+        if (value == null){
+            return Operation.EMPTY;
+        }
         if (value.equals(Operation.PLUS.value)){
             return Operation.PLUS;
         }
